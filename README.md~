@@ -53,14 +53,16 @@ book_1 = Item.new("book", "domestic", 12.49)
 book_1.calc_tax
 
 cd_1 = Item.new("music", "domestic", 14.99)
-cd_1.calc_tax
+cd_!.calc_tax
+# puts music_cd.receipt
 
-
-cart_1.add_item(book_1)
-cart_1.add_item(cd_1)
+cart_1.add_item("start_with_why")
+cart_1.add_item("dr_dre")
 
 cart_1.checkout
 
-
+# chocolate_bar = Item.new("food", "domestic", 0.85)
+# chocolate_bar.calc_tax
+# puts chocolate_bar.receipt
 
 
