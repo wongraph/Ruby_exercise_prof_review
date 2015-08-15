@@ -7,12 +7,12 @@ def initialize
 end
 
 def add_item(foo)    #parameter should be object 
-	@items << foo        
+	@items << foo       
 end
 
 def checkout
 	@items.each do |item|
-		puts "#{item} is a #{@type} and #{@source} which comes out to #{@price} plus #{@tax}" 
+		puts "item is a #{item.source} #{item.type} which comes out to be #{item.price} plus #{item.tax}" 
 	end
 end
 
@@ -21,12 +21,12 @@ end         #end of Cart class
 
 class Item 
 
-attr_accessor :type, :source, :price																																							
+attr_accessor :type, :source, :price, :tax																																							
 																																																										
 def initialize(type, source, price)
 	@type = type.to_s
 	@source = source.to_s 
-	@price = price
+	@price = price.to_i
 end
 
 def calc_tax 
@@ -50,15 +50,15 @@ end  		#end of Item class
 
 cart_1 = Cart.new
 
-start_with_why = Item.new("book", "domestic", 12.49)
-start_with_why.calc_tax
+book_1 = Item.new("book", "domestic", 12.49)
+book_1.calc_tax
 
-dr_dre = Item.new("music", "domestic", 14.99)
-dr_dre.calc_tax
+cd_1 = Item.new("music", "domestic", 14.99)
+cd_1.calc_tax
 # puts music_cd.receipt
 
-cart_1.add_item("start_with_why")
-cart_1.add_item("dr_dre")
+cart_1.add_item(book_1)
+cart_1.add_item(cd_1)
 
 cart_1.checkout
 
